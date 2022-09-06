@@ -19,7 +19,7 @@ pipeline {
          stage('Build docker image and Tag image') {
             steps {
                 script{
-                dockerImage = docker.build("flask-app-$BUILD_NUMBER")
+                sh "docker build -t flask-app-$BUILD_NUMBER"
                     }
             }
                 }
