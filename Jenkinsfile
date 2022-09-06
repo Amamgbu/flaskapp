@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment{
+        dockerImage = ""
+    }
     stages{
         stage('Lint Dockerfile') {
             steps {
