@@ -19,6 +19,7 @@ pipeline {
                     }
                 }
         stage('Stop running docker containers'){
+            steps{
             try{
                 sh 'docker ps -q | xargs docker stop'
             }
@@ -26,6 +27,7 @@ pipeline {
                 sh "echo 'no container running' " 
             }
 
+            }
         }
         stage('Run docker container'){
             steps{
