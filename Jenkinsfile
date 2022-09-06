@@ -38,7 +38,9 @@ pipeline {
         }
         stage('Run docker container'){
             steps{
-                sh "docker run -p 5000:5000 "+dockerImage+" ."
+                script{
+                sh "docker run -p 5000:5000 flask-app-$BUILD_NUMBER ."
+                }
             }
         }
 
